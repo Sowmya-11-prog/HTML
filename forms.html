@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+    <style>
+        h1{
+            text-align:center;
+            background-color: crimson;
+        }
+        table{
+            border: 2px solid black;
+            margin: 50px auto;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        body{
+            background-color: linen;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form action="">
+    <table>
+        <tr>
+            <td>firstname:</td>
+            <td><input type="text" placeholder="firstname"></td>
+        </tr>
+        <tr>
+            <td>lastname:</td>
+            <td><input type="text" placeholder="lastname"></td>
+        </tr>
+        <tr>
+           <td>Email:</td>
+           <td><input type="email" placeholder="email"></td>
+        </tr>
+        <tr>
+            <td>password:</td>
+            <td><input type="password" placeholder="password"></td>
+        </tr>
+        <tr>
+            <td>phone.no:</td>
+            <td><input type="number" placeholder="enter number"></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td>
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="female">Female
+            </td>
+        </tr>
+            <tr>
+                <td>State</td>
+                <td>
+                    <select name="state">
+                        <option value="">--Select State--</option>
+                        <option>Andhra Pradesh</option>
+                        <option>Telangana</option>
+                        <option>Tamil Nadu</option>
+                        <option>Karnataka</option>
+                        <option>Kerala</option>
+                        <option>Maharashtra</option>
+                        <option>Delhi</option>
+                    </select>
+                </td>
+            </tr>
+            <td>Disability:</td>
+            <td>
+                <input type="radio" value="yes">yes
+                <input type="radio" value="no">No
+            </td>
+        </tr>
+        <tr>
+            <td>Date of birth:</td>
+            <td><input type="date" name="dob"></td>
+        </tr>
+        <tr>
+            <td>resume:</td>
+            <td><input type="file" name="upload resume"></td>
+        </tr>
+         <tr>
+            <td>Designation:</td>
+            <td>
+                <select name="designation">
+                    <option value="">--Select Designation--</option>
+                    <option>Software Engineer</option>
+                    <option>Web Developer</option>
+                    <option>Full Stack Developer</option>
+                    <option>Frontend Developer</option>
+                    <option>Backend Developer</option>
+                    <option>Data Analyst</option>
+                    <option>Student</option>
+                    <option>Other</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td>
+                <textarea rows="4" cols="30" placeholder="Enter your address"></textarea>
+            </td>
+        </tr>
+       
+        <tr>
+            <td>
+                <input type="checkbox" name="terms and conditions"> I agree to the terms and conditions required
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button type="submit">Submit</button>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
