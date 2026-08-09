@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: darkgray;
+        }
+        th,td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        h1{
+            color:brown;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Registration Form</h1>
+    <form id="formData">
+        <input type="text" name="firstname" id="firstname" placeholder="firstname"><br>
+        <input type="text" name="lastname" id="lastname" placeholder="lastname"><br>
+        <input type="email" name="email" id="email" placeholder="email"><br>
+        <input type="password" name="password" id="password" placeholder="password"><br>
+        <input type="password" name="confirmpassword" id="confirmpassword" placeholder="confirmpassword"><br>
+        <input type="submit">
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        document.getElementById("formData").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const getData = JSON.parse(localStorage.getItem("userData")) || [] 
+            console.log(getData,"getdataaaaaaaaa")
+
+            const firstname = document.getElementById("firstname").value;
+            const lastname = document.getElementById("lastname").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmpassword = document.getElementById("confirmpassword").value;
+
+            const data = {
+                firstname:firstname,
+                lastname:lastname,
+                email:email,
+                password:password
+            
+            }
+            if (password == confirmpassword) {
+                localStorage.setItem("userData",JSON.stringify(data))
+                document.getElementById("output").innerHTML = `
+            
+            <table border="1">
+
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                </tr>
+
+                <tr>
+                    <td>${firstname}</td>
+                    <td>${lastname}</td>
+                    <td>${email}</td>
+                    <td>${password}</td>
+                </tr>
+
+            </table>
+        `;
+
+    } else {
+
+        alert("Password doesn't match");
+
+    }
+});
+    </script>
+</body>
+
+</html>
